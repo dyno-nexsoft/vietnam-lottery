@@ -4,7 +4,6 @@ from datetime import date, datetime, time, timedelta
 from zoneinfo import ZoneInfo
 from typing import Optional
 import json
-import os
 
 from .lotterymb import LotteryMB
 from .lotterymn import LotteryMN
@@ -70,22 +69,6 @@ def parse_date(date_str: str) -> date:
     except ValueError as e:
         raise argparse.ArgumentTypeError(f"Invalid date format: {e}. Use YYYY-MM-DD")
 
-def send_notification(message: str, error: bool = False) -> None:
-    """Send notification about job status"""
-    # Check if TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are set
-    bot_token = os.getenv('TELEGRAM_BOT_TOKEN')
-    chat_id = os.getenv('TELEGRAM_CHAT_ID')
-    
-    if bot_token and chat_id:
-        try:
-            import requests
-            level = "❌ ERROR" if error else "✅ INFO"
-            text = f"{level}: {message}"
-            url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-            requests.post(url, json={"chat_id": chat_id, "text": text})
-        except Exception as e:
-            logger.error(f"Failed to send Telegram notification: {str(e)}")
-
 def get_date_range(start_date: date = None, end_date: date = None) -> tuple[date, date]:
     """Get start and end dates based on input or current time"""
     if end_date is None:
@@ -143,17 +126,6 @@ if __name__ == '__main__':
         summary_msg = "Lottery Data Fetch Summary:\n" + "\n".join(summary)
         logger.info(summary_msg)
         
-        # Send notification
-        if all(success.values()):
-            send_notification(f"Successfully fetched all lottery data for {end_date}")
-        else:
-            failed_regions = [region for region, status in success.items() if not status]
-            send_notification(
-                f"Failed to fetch data for {', '.join(failed_regions)} on {end_date}",
-                error=True
-            )
-        
     except Exception as e:
         error_msg = f"Critical error in lottery fetch process: {str(e)}"
         logger.error(error_msg)
-        send_notification(error_msg, error=True)

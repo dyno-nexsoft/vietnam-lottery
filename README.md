@@ -7,11 +7,11 @@ Công cụ tự động thu thập, xử lý và lưu trữ dữ liệu xổ s�
 - Thu thập kết quả xổ số Miền Bắc (XSMB), Miền Nam (XSMN) và Miền Trung (XSMT).
 - Tự động điều chỉnh ngày thu thập dựa trên múi giờ Việt Nam để đảm bảo dữ liệu đầy đủ.
 - Lưu trữ dữ liệu dưới nhiều định dạng:
-    - Dữ liệu thô (raw data) dưới dạng JSON và CSV/Parquet.
-    - Dữ liệu 2 số cuối (2-digits data) dưới dạng CSV/Parquet, phục vụ phân tích.
-    - Dữ liệu dạng ma trận thưa (sparse data) dưới dạng CSV/Parquet, tối ưu cho các phân tích chuyên sâu.
+  - Dữ liệu thô (raw data) dưới dạng JSON và CSV/Parquet.
+  - Dữ liệu 2 số cuối (2-digits data) dưới dạng CSV/Parquet, phục vụ phân tích.
+  - Dữ liệu dạng ma trận thưa (sparse data) dưới dạng CSV/Parquet, tối ưu cho các phân tích chuyên sâu.
 - Hỗ trợ thu thập dữ liệu theo khoảng thời gian tùy chỉnh.
-- Gửi thông báo trạng thái qua Telegram (tùy chọn cấu hình).
+
 - Tự động cập nhật dữ liệu hàng ngày thông qua GitHub Actions.
 
 ## Yêu cầu hệ thống
@@ -22,95 +22,57 @@ Công cụ tự động thu thập, xử lý và lưu trữ dữ liệu xổ s�
 ## Cài đặt
 
 1. Clone repository này về máy:
+
 ```bash
 git clone https://github.com/[username]/vietnam-lottery.git
 cd vietnam-lottery
 ```
 
 2. Cài đặt các thư viện cần thiết:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Cách sử dụng
 
-### Thu thập dữ liệu thủ công
+Dự án này cung cấp hai script chính để bạn tương tác: `fetch.py` để thu thập dữ liệu và `lottery_analyzer.py` để phân tích và tạo biểu đồ dự đoán.
 
-Script chính `src/fetch.py` cho phép thu thập dữ liệu từ cả ba miền. Bạn có thể chỉ định ngày bắt đầu và ngày kết thúc để thu thập dữ liệu.
+### 1. Thu thập dữ liệu (Bắt buộc)
+
+Đây là bước đầu tiên và quan trọng nhất. Bạn cần thu thập dữ liệu xổ số trước khi có thể thực hiện bất kỳ phân tích nào.
 
 - **Chạy từ dòng lệnh:**
-  Để thu thập dữ liệu cho một khoảng thời gian cụ thể:
+  Script `src/fetch.py` cho phép thu thập dữ liệu từ cả ba miền.
+  - Để thu thập dữ liệu trong 7 ngày gần nhất (mặc định):
+    ```bash
+    python -m src.fetch
+    ```
+  - Để thu thập dữ liệu cho một khoảng thời gian cụ thể:
+    ```bash
+    python -m src.fetch --start YYYY-MM-DD --end YYYY-MM-DD
+    ```
+    Ví dụ:
+    ```bash
+    python -m src.fetch --start 2023-01-01 --end 2023-12-31
+    ```
+    Script sẽ tự động lưu dữ liệu vào thư mục `data/` dưới nhiều định dạng khác nhau (JSON, Parquet, CSV).
+
+### 2. Phân tích và Dự đoán
+
+Sau khi đã có dữ liệu, bạn có thể chạy script `lottery_analyzer.py` để tạo các biểu đồ phân tích tần suất và dự đoán bằng Machine Learning.
+
+- **Chạy từ dòng lệnh:**
   ```bash
-  python -m src.fetch --start YYYY-MM-DD --end YYYY-MM-DD
+  python -m src.lottery_analyzer
   ```
-  Ví dụ:
-  ```bash
-  python -m src.fetch --start 2023-01-01 --end 2023-01-31
-  ```
-  Nếu không cung cấp ngày, script sẽ mặc định thu thập dữ liệu trong 7 ngày gần nhất tính đến ngày hiện tại (có điều chỉnh theo múi giờ Việt Nam để đảm bảo dữ liệu đầy đủ).
-
-- **Sử dụng trong mã Python:**
-  ```python
-  from datetime import date
-  from src.fetch import fetch_xsmb, fetch_xsmn, fetch_xsmt # Lưu ý: các hàm này không còn được export trực tiếp từ fetch.py để sử dụng bên ngoài.
-                                                          # Thay vào đó, bạn nên chạy script fetch.py như một module.
-  # Ví dụ (chỉ mang tính minh họa, không khuyến khích sử dụng trực tiếp các hàm nội bộ):
-  # from src.lotterymb import LotteryMB
-  # from src.lotterymn import LotteryMN
-  # from src.lotterymt import LotteryMT
-  # from src.fetch import _fetch_lottery_data # Hàm nội bộ
-
-  # start_date = date(2023, 1, 1)
-  # end_date = date(2023, 12, 31)
-
-  # _fetch_lottery_data(LotteryMB(), 'XSMB', start_date, end_date)
-  # _fetch_lottery_data(LotteryMN(), 'XSMN', start_date, end_date)
-  # _fetch_lottery_data(LotteryMT(), 'XSMT', start_date, end_date)
-  ```
-
-### Cấu hình thông báo Telegram
-
-Bạn có thể nhận thông báo về trạng thái cập nhật dữ liệu qua Telegram bằng cách thiết lập các biến môi trường sau:
-
-- `TELEGRAM_BOT_TOKEN`: Token của bot Telegram của bạn.
-- `TELEGRAM_CHAT_ID`: ID cuộc trò chuyện (chat ID) nơi bot sẽ gửi thông báo.
-
-Ví dụ, bạn có thể tạo một file `.env` trong thư mục gốc của dự án với nội dung:
-```
-TELEGRAM_BOT_TOKEN=YOUR_BOT_TOKEN_HERE
-TELEGRAM_CHAT_ID=YOUR_CHAT_ID_HERE
-```
-Sau đó, đảm bảo rằng thư viện `python-dotenv` đã được cài đặt (`pip install python-dotenv`).
+- **Kết quả:**
+  Script này sẽ:
+  1. Đọc dữ liệu từ các file `*-2-digits.csv` trong thư mục `data/`.
+  2. Thực hiện phân tích tần suất và huấn luyện mô hình dự đoán.
+  3. Lưu các biểu đồ phân tích và dự đoán (dưới dạng file `.png`) vào thư mục `data/`. Các biểu đồ này chính là những hình ảnh bạn thấy trong phần "Phân tích và Dự đoán Kết quả" của file README này.
 
 ## Cấu trúc dự án
-
-## Phân tích tần suất lịch sử
-
-Dưới đây là phân tích tần suất xuất hiện của 10 số có 2 chữ số cao nhất và 10 số thấp nhất dựa trên dữ liệu lịch sử cho từng miền:
-
-### Miền Bắc (XSMB)
-![Phân tích tần suất Miền Bắc](data/frequency_analysis_MB.png)
-
-### Miền Nam (XSMN)
-![Phân tích tần suất Miền Nam](data/frequency_analysis_MN.png)
-
-### Miền Trung (XSMT)
-![Phân tích tần suất Miền Trung](data/frequency_analysis_MT.png)
-
-## Dự đoán kết quả (Machine Learning)
-
-Dưới đây là dự đoán 10 số có 2 chữ số có khả năng ra cao nhất dựa trên mô hình Machine Learning (Hồi quy Logistic) được huấn luyện từ dữ liệu lịch sử. Kết quả được sắp xếp theo xác suất dự đoán giảm dần.
-
-### Miền Bắc (XSMB)
-![Dự đoán ML Miền Bắc](data/ml_prediction_MB.png)
-
-### Miền Nam (XSMN)
-![Dự đoán ML Miền Nam](data/ml_prediction_MN.png)
-
-### Miền Trung (XSMT)
-![Dự đoán ML Miền Trung](data/ml_prediction_MT.png)
-
-
 
 ```
 vietnam-lottery/
@@ -141,8 +103,7 @@ vietnam-lottery/
 - `numpy`: Hỗ trợ các phép toán số học hiệu quả.
 - `pandas`: Xử lý, phân tích và lưu trữ dữ liệu dưới dạng DataFrame.
 - `pydantic`: Kiểm tra và xác thực dữ liệu, đảm bảo tính toàn vẹn của dữ liệu xổ số.
-- `requests`: Thực hiện các yêu cầu HTTP (được sử dụng bởi `cloudscraper` và cho thông báo Telegram).
-- `python-dotenv`: Tải các biến môi trường từ file `.env`.
+- `requests`: Thực hiện các yêu cầu HTTP (được sử dụng bởi `cloudscraper`).
 - `lxml`: Bộ phân tích cú pháp HTML/XML nhanh chóng (được được sử dụng bởi `beautifulsoup4`).
 - `matplotlib`: Thư viện để tạo biểu đồ và trực quan hóa dữ liệu.
 - `scikit-learn`: Thư viện cho các thuật toán học máy, được sử dụng để xây dựng mô hình dự đoán.
@@ -164,3 +125,46 @@ Mọi đóng góp đều được hoan nghênh. Vui lòng tạo issue hoặc pul
 ## License
 
 [Thêm thông tin về license của dự án]
+
+## Phân tích và Dự đoán Kết quả
+
+Phần này cung cấp cả phân tích tần suất lịch sử và dự đoán kết quả xổ số dựa trên mô hình học máy cho từng miền.
+
+<details>
+<summary><strong>Miền Bắc (XSMB)</strong></summary>
+
+Dưới đây là phân tích tần suất và dự đoán cho xổ số Miền Bắc.
+
+**Phân tích tần suất lịch sử:**
+![Phân tích tần suất Miền Bắc](data/frequency_analysis_MB.png)
+
+**Dự đoán kết quả (Machine Learning):**
+![Dự đoán ML Miền Bắc](data/ml_prediction_MB.png)
+
+</details>
+
+<details>
+<summary><strong>Miền Nam (XSMN)</strong></summary>
+
+Dưới đây là phân tích tần suất và dự đoán cho xổ số Miền Nam.
+
+**Phân tích tần suất lịch sử:**
+![Phân tích tần suất Miền Nam](data/frequency_analysis_MN.png)
+
+**Dự đoán kết quả (Machine Learning):**
+![Dự đoán ML Miền Nam](data/ml_prediction_MN.png)
+
+</details>
+
+<details>
+<summary><strong>Miền Trung (XSMT)</strong></summary>
+
+Dưới đây là phân tích tần suất và dự đoán cho xổ số Miền Trung.
+
+**Phân tích tần suất lịch sử:**
+![Phân tích tần suất Miền Trung](data/frequency_analysis_MT.png)
+
+**Dự đoán kết quả (Machine Learning):**
+![Dự đoán ML Miền Trung](data/ml_prediction_MT.png)
+
+</details>
