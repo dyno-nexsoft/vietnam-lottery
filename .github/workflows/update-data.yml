@@ -1,0 +1,43 @@
+name: Update data
+
+on:
+  schedule:
+    - cron: '45 11 * * *' # 18:45 (6:45 PM) in Vietnam - 10 minutes after XSMB results
+  workflow_dispatch: # Allow manual trigger
+
+env:
+  TZ: 'Asia/Ho_Chi_Minh' # Set timezone to Vietnam
+
+jobs:
+  update-data:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Get all history to ensure proper updates
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: install python packages
+        run: |
+          pip install -r requirements.txt
+
+      - name: fetch data
+        run: python src/fetch.py
+
+      - name: get current date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: push changes
+        uses: actions-x/commit@v6
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          message: Updated ${{ env.date }}
+          email: action@github.com
+          name: GitHub Action
