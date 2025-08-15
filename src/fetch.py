@@ -5,9 +5,11 @@ from zoneinfo import ZoneInfo
 from typing import Optional
 import json
 import os
-from lotterymb import LotteryMB
-from lotterymn import LotteryMN
-from lotterymt import LotteryMT
+
+from .lotterymb import LotteryMB
+from .lotterymn import LotteryMN
+from .lotterymt import LotteryMT
+from .lottery_base import LotteryBase # Import LotteryBase for type hinting
 
 # Configure logging
 logging.basicConfig(
@@ -21,11 +23,10 @@ logging.basicConfig(
 logger = logging.getLogger('vietnam-lottery')
 
 
-def fetch_xsmb(start_date: date, end_date: date) -> bool:
-    logger.info(f"Fetching XSMB from {start_date} to {end_date}")
+def _fetch_lottery_data(lottery_instance: LotteryBase, lottery_type: str, start_date: date, end_date: date) -> bool:
+    logger.info(f"Fetching {lottery_type} from {start_date} to {end_date}")
     try:
-        lottery = LotteryMB()
-        lottery.load()
+        lottery_instance.load()
         
         delta = (end_date - start_date).days + 1
         success_count = 0
@@ -33,96 +34,26 @@ def fetch_xsmb(start_date: date, end_date: date) -> bool:
         for i in range(delta):
             selected_date = start_date + timedelta(days=i)
             try:
-                logger.info(f'Fetching XSMB: {selected_date}')
-                result = lottery.fetch(selected_date)
-                if validate_lottery_data(result, "XSMB"):
+                logger.info(f'Fetching {lottery_type}: {selected_date}')
+                result = lottery_instance.fetch(selected_date)
+                if result is not None: # Assuming fetch returns None on failure
                     success_count += 1
                 else:
-                    logger.warning(f"Invalid data for XSMB on {selected_date}")
+                    logger.warning(f"No data or invalid data for {lottery_type} on {selected_date}")
             except Exception as e:
-                logger.error(f"Error fetching XSMB for {selected_date}: {str(e)}")
+                logger.error(f"Error fetching {lottery_type} for {selected_date}: {str(e)}")
 
         if success_count > 0:
-            lottery.generate_dataframes()
-            lottery.dump()
-            logger.info(f"Successfully fetched {success_count}/{delta} days of XSMB data")
+            lottery_instance.generate_dataframes()
+            lottery_instance.dump()
+            logger.info(f"Successfully fetched {success_count}/{delta} days of {lottery_type} data")
             return True
         else:
-            logger.error("No valid XSMB data fetched")
+            logger.error(f"No valid {lottery_type} data fetched")
             return False
             
     except Exception as e:
-        logger.error(f"Error in XSMB fetch process: {str(e)}")
-        return False
-
-
-def fetch_xsmn(start_date: date, end_date: date) -> bool:
-    logger.info(f"Fetching XSMN from {start_date} to {end_date}")
-    try:
-        lottery = LotteryMN()
-        lottery.load()
-        
-        delta = (end_date - start_date).days + 1
-        success_count = 0
-        
-        for i in range(delta):
-            selected_date = start_date + timedelta(days=i)
-            try:
-                logger.info(f'Fetching XSMN: {selected_date}')
-                result = lottery.fetch(selected_date)
-                if validate_lottery_data(result, "XSMN"):
-                    success_count += 1
-                else:
-                    logger.warning(f"Invalid data for XSMN on {selected_date}")
-            except Exception as e:
-                logger.error(f"Error fetching XSMN for {selected_date}: {str(e)}")
-
-        if success_count > 0:
-            lottery.generate_dataframes()
-            lottery.dump()
-            logger.info(f"Successfully fetched {success_count}/{delta} days of XSMN data")
-            return True
-        else:
-            logger.error("No valid XSMN data fetched")
-            return False
-            
-    except Exception as e:
-        logger.error(f"Error in XSMN fetch process: {str(e)}")
-        return False
-
-
-def fetch_xsmt(start_date: date, end_date: date) -> bool:
-    logger.info(f"Fetching XSMT from {start_date} to {end_date}")
-    try:
-        lottery = LotteryMT()
-        lottery.load()
-        
-        delta = (end_date - start_date).days + 1
-        success_count = 0
-        
-        for i in range(delta):
-            selected_date = start_date + timedelta(days=i)
-            try:
-                logger.info(f'Fetching XSMT: {selected_date}')
-                result = lottery.fetch(selected_date)
-                if validate_lottery_data(result, "XSMT"):
-                    success_count += 1
-                else:
-                    logger.warning(f"Invalid data for XSMT on {selected_date}")
-            except Exception as e:
-                logger.error(f"Error fetching XSMT for {selected_date}: {str(e)}")
-
-        if success_count > 0:
-            lottery.generate_dataframes()
-            lottery.dump()
-            logger.info(f"Successfully fetched {success_count}/{delta} days of XSMT data")
-            return True
-        else:
-            logger.error("No valid XSMT data fetched")
-            return False
-            
-    except Exception as e:
-        logger.error(f"Error in XSMT fetch process: {str(e)}")
+        logger.error(f"Error in {lottery_type} fetch process: {str(e)}")
         return False
 
 
@@ -132,20 +63,6 @@ def parse_date(date_str: str) -> date:
         return datetime.strptime(date_str, "%Y-%m-%d").date()
     except ValueError as e:
         raise argparse.ArgumentTypeError(f"Invalid date format: {e}. Use YYYY-MM-DD")
-
-def validate_lottery_data(data: any, lottery_type: str) -> bool:
-    """Validate lottery data structure and content"""
-    if data is None:
-        logger.error(f"Empty data for {lottery_type}")
-        return False
-    
-    try:
-        # For now just check if we got any data back
-        # The actual validation is handled by Pydantic models in the lottery classes
-        return True
-    except Exception as e:
-        logger.error(f"Error validating {lottery_type} data: {str(e)}")
-        return False
 
 def send_notification(message: str, error: bool = False) -> None:
     """Send notification about job status"""
@@ -204,11 +121,11 @@ if __name__ == '__main__':
         if start_date > end_date:
             parser.error("Start date cannot be after end date")
         
-        # Fetch all three regions
+        # Fetch all three regions using the generic function
         success = {
-            'XSMB': fetch_xsmb(start_date, end_date),
-            'XSMN': fetch_xsmn(start_date, end_date),
-            'XSMT': fetch_xsmt(start_date, end_date)
+            'XSMB': _fetch_lottery_data(LotteryMB(), 'XSMB', start_date, end_date),
+            'XSMN': _fetch_lottery_data(LotteryMN(), 'XSMN', start_date, end_date),
+            'XSMT': _fetch_lottery_data(LotteryMT(), 'XSMT', start_date, end_date)
         }
         
         # Log summary
