@@ -32,14 +32,14 @@ jobs:
       - name: get current date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
-      - name: get yesterday's date
-        run: echo "yesterday=$(date -d "yesterday" +'%Y-%m-%d')" >> $GITHUB_ENV
-
       - name: Debug - Print Pydantic version
         run: pip show pydantic
 
       - name: fetch data
-        run: python -m src.fetch --start ${{ env.yesterday }} --end ${{ env.date }}
+        run: python -m src.fetch --start ${{ env.date }} --end ${{ env.date }}
+
+      - name: Generate lottery predictions
+        run: python src/lottery_analyzer.py
 
       - name: push changes
         uses: actions-x/commit@v6

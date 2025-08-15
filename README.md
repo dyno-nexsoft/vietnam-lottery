@@ -84,6 +84,34 @@ Sau đó, đảm bảo rằng thư viện `python-dotenv` đã được cài đ�
 
 ## Cấu trúc dự án
 
+## Phân tích tần suất lịch sử
+
+Dưới đây là phân tích tần suất xuất hiện của 10 số có 2 chữ số cao nhất và 10 số thấp nhất dựa trên dữ liệu lịch sử cho từng miền:
+
+### Miền Bắc (XSMB)
+![Phân tích tần suất Miền Bắc](data/frequency_analysis_MB.png)
+
+### Miền Nam (XSMN)
+![Phân tích tần suất Miền Nam](data/frequency_analysis_MN.png)
+
+### Miền Trung (XSMT)
+![Phân tích tần suất Miền Trung](data/frequency_analysis_MT.png)
+
+## Dự đoán kết quả (Machine Learning)
+
+Dưới đây là dự đoán 10 số có 2 chữ số có khả năng ra cao nhất dựa trên mô hình Machine Learning (Hồi quy Logistic) được huấn luyện từ dữ liệu lịch sử. Kết quả được sắp xếp theo xác suất dự đoán giảm dần.
+
+### Miền Bắc (XSMB)
+![Dự đoán ML Miền Bắc](data/ml_prediction_MB.png)
+
+### Miền Nam (XSMN)
+![Dự đoán ML Miền Nam](data/ml_prediction_MN.png)
+
+### Miền Trung (XSMT)
+![Dự đoán ML Miền Trung](data/ml_prediction_MT.png)
+
+
+
 ```
 vietnam-lottery/
 ├── .github/                  # Cấu hình GitHub Actions
@@ -94,6 +122,7 @@ vietnam-lottery/
 ├── requirements.txt          # Các thư viện Python cần thiết
 ├── src/
 │   ├── fetch.py              # Script chính để thu thập dữ liệu
+│   ├── lottery_analyzer.py   # Script phân tích tần suất và dự đoán kết quả
 │   ├── lottery_base.py       # Lớp cơ sở trừu tượng cho các loại xổ số
 │   ├── lotterymb.py          # Module xử lý xổ số Miền Bắc
 │   ├── lotterymn.py          # Module xử lý xổ số Miền Nam
@@ -114,7 +143,9 @@ vietnam-lottery/
 - `pydantic`: Kiểm tra và xác thực dữ liệu, đảm bảo tính toàn vẹn của dữ liệu xổ số.
 - `requests`: Thực hiện các yêu cầu HTTP (được sử dụng bởi `cloudscraper` và cho thông báo Telegram).
 - `python-dotenv`: Tải các biến môi trường từ file `.env`.
-- `lxml`: Bộ phân tích cú pháp HTML/XML nhanh chóng (được sử dụng bởi `beautifulsoup4`).
+- `lxml`: Bộ phân tích cú pháp HTML/XML nhanh chóng (được được sử dụng bởi `beautifulsoup4`).
+- `matplotlib`: Thư viện để tạo biểu đồ và trực quan hóa dữ liệu.
+- `scikit-learn`: Thư viện cho các thuật toán học máy, được sử dụng để xây dựng mô hình dự đoán.
 
 ## Tự động cập nhật dữ liệu
 

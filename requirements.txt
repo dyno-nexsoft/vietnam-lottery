@@ -7,3 +7,5 @@ requests>=2.31.0
 python-dotenv>=1.0.0
 lxml
 pyarrow>=10.0.0 # Added for Parquet support
+matplotlib>=3.8.0
+scikit-learn>=1.0.0
