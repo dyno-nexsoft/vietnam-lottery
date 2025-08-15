@@ -1,0 +1,51 @@
+2025-08-15 20:34:58,474 - vietnam-lottery - INFO - Date range: 2025-08-15 to 2025-08-15
+2025-08-15 20:34:58,502 - vietnam-lottery - INFO - Fetching XSMB from 2025-08-15 to 2025-08-15
+2025-08-15 20:34:58,516 - vietnam-lottery - INFO - Generated dataframes with data from 2025-07-16 to 2025-08-14
+2025-08-15 20:34:58,516 - vietnam-lottery - INFO - Successfully loaded existing data from data/xsmb.json
+2025-08-15 20:34:58,516 - vietnam-lottery - INFO - Fetching XSMB: 2025-08-15
+2025-08-15 20:34:58,516 - vietnam-lottery - INFO - Fetching URL: https://xoso.com.vn/xsmb-15-08-2025.html
+2025-08-15 20:35:02,248 - vietnam-lottery - INFO - Response status: 200
+2025-08-15 20:35:02,274 - vietnam-lottery - INFO - Successfully fetched data for 2025-08-15
+2025-08-15 20:35:02,292 - vietnam-lottery - INFO - Generated dataframes with data from 2025-07-16 to 2025-08-15
+2025-08-15 20:35:02,293 - vietnam-lottery - INFO - Saved 31 results to data/xsmb.json
+2025-08-15 20:35:02,333 - vietnam-lottery - INFO - Saved 31 records to data/xsmb.csv and data/xsmb.parquet
+2025-08-15 20:35:02,337 - vietnam-lottery - INFO - Saved 31 records to data/xsmb-2-digits.csv and data/xsmb-2-digits.parquet
+2025-08-15 20:35:02,347 - vietnam-lottery - INFO - Saved 31 records to data/xsmb-sparse.csv and data/xsmb-sparse.parquet
+2025-08-15 20:35:02,347 - vietnam-lottery - INFO - Successfully fetched 1/1 days of XSMB data
+2025-08-15 20:35:02,374 - vietnam-lottery - INFO - Fetching XSMN from 2025-08-15 to 2025-08-15
+2025-08-15 20:35:02,628 - vietnam-lottery - INFO - Generated dataframes with data from 2025-07-16 to 2025-08-14
+2025-08-15 20:35:02,628 - vietnam-lottery - INFO - Successfully loaded existing data from data/xsmn.json
+2025-08-15 20:35:02,629 - vietnam-lottery - INFO - Fetching XSMN: 2025-08-15
+2025-08-15 20:35:02,629 - vietnam-lottery - INFO - Fetching URL: https://xoso.com.vn/xsmn-15-08-2025.html
+2025-08-15 20:35:03,267 - vietnam-lottery - INFO - Response status: 200
+2025-08-15 20:35:03,291 - vietnam-lottery - INFO - Found provinces: Vĩnh Long, Bình Dương, Trà Vinh
+2025-08-15 20:35:03,293 - vietnam-lottery - INFO - Successfully processed data for Vĩnh Long on 2025-08-15
+2025-08-15 20:35:03,293 - vietnam-lottery - INFO - Successfully processed data for Bình Dương on 2025-08-15
+2025-08-15 20:35:03,293 - vietnam-lottery - INFO - Successfully processed data for Trà Vinh on 2025-08-15
+2025-08-15 20:35:03,293 - vietnam-lottery - INFO - Successfully fetched 3 results for date 2025-08-15
+2025-08-15 20:35:03,553 - vietnam-lottery - INFO - Generated dataframes with data from 2025-07-16 to 2025-08-15
+2025-08-15 20:35:03,555 - vietnam-lottery - INFO - Saved 97 results to data/xsmn.json
+2025-08-15 20:35:03,560 - vietnam-lottery - INFO - Saved 97 records to data/xsmn.csv and data/xsmn.parquet
+2025-08-15 20:35:03,563 - vietnam-lottery - INFO - Saved 97 records to data/xsmn-2-digits.csv and data/xsmn-2-digits.parquet
+2025-08-15 20:35:03,574 - vietnam-lottery - INFO - Saved 97 records to data/xsmn-sparse.csv and data/xsmn-sparse.parquet
+2025-08-15 20:35:03,574 - vietnam-lottery - INFO - Successfully fetched 1/1 days of XSMN data
+2025-08-15 20:35:03,600 - vietnam-lottery - INFO - Fetching XSMT from 2025-08-15 to 2025-08-15
+2025-08-15 20:35:03,795 - vietnam-lottery - INFO - Generated dataframes with data from 2025-07-16 to 2025-08-14
+2025-08-15 20:35:03,795 - vietnam-lottery - INFO - Successfully loaded existing data from data/xsmt.json
+2025-08-15 20:35:03,795 - vietnam-lottery - INFO - Fetching XSMT: 2025-08-15
+2025-08-15 20:35:03,796 - vietnam-lottery - INFO - Fetching URL: https://xoso.com.vn/xsmt-15-08-2025.html
+2025-08-15 20:35:04,674 - vietnam-lottery - INFO - Response status: 200
+2025-08-15 20:35:04,696 - vietnam-lottery - INFO - Found provinces: Gia Lai, Ninh Thuận
+2025-08-15 20:35:04,697 - vietnam-lottery - INFO - Successfully processed data for Gia Lai on 2025-08-15
+2025-08-15 20:35:04,697 - vietnam-lottery - INFO - Successfully processed data for Ninh Thuận on 2025-08-15
+2025-08-15 20:35:04,697 - vietnam-lottery - INFO - Successfully fetched 2 results for date 2025-08-15
+2025-08-15 20:35:04,900 - vietnam-lottery - INFO - Generated dataframes with data from 2025-07-16 to 2025-08-15
+2025-08-15 20:35:04,902 - vietnam-lottery - INFO - Saved 75 results to data/xsmt.json
+2025-08-15 20:35:04,906 - vietnam-lottery - INFO - Saved 75 records to data/xsmt.csv and data/xsmt.parquet
+2025-08-15 20:35:04,910 - vietnam-lottery - INFO - Saved 75 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-08-15 20:35:04,919 - vietnam-lottery - INFO - Saved 75 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-08-15 20:35:04,920 - vietnam-lottery - INFO - Successfully fetched 1/1 days of XSMT data
+2025-08-15 20:35:04,920 - vietnam-lottery - INFO - Lottery Data Fetch Summary:
+XSMB: succeeded
+XSMN: succeeded
+XSMT: succeeded
