@@ -44,17 +44,21 @@ Dự án này cung cấp hai script chính để bạn tương tác: `fetch.py` 
 
 - **Chạy từ dòng lệnh:**
   Script `src/fetch.py` cho phép thu thập dữ liệu từ cả ba miền.
-  - Để thu thập dữ liệu trong 7 ngày gần nhất (mặc định):
+  - Để thu thập dữ liệu cho ngày hiện tại (hoặc ngày gần nhất có kết quả):
     ```bash
     python -m src.fetch
     ```
-  - Để thu thập dữ liệu cho một khoảng thời gian cụ thể:
+  - Để thu thập dữ liệu đến một ngày cụ thể:
     ```bash
-    python -m src.fetch --start YYYY-MM-DD --end YYYY-MM-DD
+    python -m src.fetch --end YYYY-MM-DD
     ```
+    Nếu không cung cấp ngày bắt đầu (`--start`), script sẽ tự động xác định ngày bắt đầu:
+    - Nếu đã có dữ liệu, script sẽ bắt đầu thu thập từ ngày tiếp theo của ngày cuối cùng trong dữ liệu hiện có.
+    - Nếu chưa có dữ liệu, script sẽ thu thập dữ liệu của 7 ngày gần nhất tính từ ngày kết thúc.
+
     Ví dụ:
     ```bash
-    python -m src.fetch --start 2023-01-01 --end 2023-12-31
+    python -m src.fetch --end 2023-12-31
     ```
     Script sẽ tự động lưu dữ liệu vào thư mục `data/` dưới nhiều định dạng khác nhau (JSON, Parquet, CSV).
 

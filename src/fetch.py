@@ -92,8 +92,18 @@ def get_date_range(start_date: date = None, end_date: date = None) -> tuple[date
             pass
     
     if start_date is None:
-        # Start from 7 days ago by default
-        start_date = end_date - timedelta(days=7)
+        try:
+            import pandas as pd
+            # Read the last date from the existing data
+            df = pd.read_csv('data/xsmb.csv')
+            latest_date_str = df['date'].max()
+            latest_date = datetime.strptime(latest_date_str, '%Y-%m-%d').date()
+            start_date = latest_date + timedelta(days=1)
+        except (FileNotFoundError, pd.errors.EmptyDataError, KeyError):
+            # If the file doesn't exist or is empty, start from 7 days ago
+            logger.warning("Could not determine latest date from data. Defaulting to 7 days ago.")
+            start_date = end_date - timedelta(days=7)
+
     
     logger.info(f"Date range: {start_date} to {end_date}")
     return start_date, end_date

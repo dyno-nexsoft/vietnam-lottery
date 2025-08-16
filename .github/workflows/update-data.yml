@@ -36,7 +36,7 @@ jobs:
         run: pip show pydantic
 
       - name: fetch data
-        run: python -m src.fetch --start ${{ env.date }} --end ${{ env.date }}
+        run: python -m src.fetch --end ${{ env.date }}
 
       - name: Generate lottery predictions
         run: python src/lottery_analyzer.py
