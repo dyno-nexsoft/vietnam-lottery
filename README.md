@@ -126,45 +126,12 @@ Mọi đóng góp đều được hoan nghênh. Vui lòng tạo issue hoặc pul
 
 [Thêm thông tin về license của dự án]
 
-## Phân tích và Dự đoán Kết quả
+## Phân tích Kết quả
 
-Phần này cung cấp cả phân tích tần suất lịch sử và dự đoán kết quả xổ số dựa trên mô hình học máy cho từng miền.
+Phần này cung cấp các phân tích về những con số xuất hiện thường xuyên nhất và những con số đã lâu không xuất hiện.
 
-<details>
-<summary><strong>Miền Bắc (XSMB)</strong></summary>
+### Các số xuất hiện nhiều nhất theo từng vùng miền
+![Phân tích các số xuất hiện nhiều nhất](data/most_frequent_numbers.png)
 
-Dưới đây là phân tích tần suất và dự đoán cho xổ số Miền Bắc.
-
-**Phân tích tần suất lịch sử:**
-![Phân tích tần suất Miền Bắc](data/frequency_analysis_MB.png)
-
-**Dự đoán kết quả (Machine Learning):**
-![Dự đoán ML Miền Bắc](data/ml_prediction_MB.png)
-
-</details>
-
-<details>
-<summary><strong>Miền Nam (XSMN)</strong></summary>
-
-Dưới đây là phân tích tần suất và dự đoán cho xổ số Miền Nam.
-
-**Phân tích tần suất lịch sử:**
-![Phân tích tần suất Miền Nam](data/frequency_analysis_MN.png)
-
-**Dự đoán kết quả (Machine Learning):**
-![Dự đoán ML Miền Nam](data/ml_prediction_MN.png)
-
-</details>
-
-<details>
-<summary><strong>Miền Trung (XSMT)</strong></summary>
-
-Dưới đây là phân tích tần suất và dự đoán cho xổ số Miền Trung.
-
-**Phân tích tần suất lịch sử:**
-![Phân tích tần suất Miền Trung](data/frequency_analysis_MT.png)
-
-**Dự đoán kết quả (Machine Learning):**
-![Dự đoán ML Miền Trung](data/ml_prediction_MT.png)
-
-</details>
+### Các số lâu rồi không xuất hiện theo từng vùng miền
+![Phân tích các số chưa xuất hiện gần đây](data/least_recent_numbers.png)
