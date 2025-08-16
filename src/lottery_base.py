@@ -35,7 +35,7 @@ class LotteryBase(ABC):
         data_dir.mkdir(exist_ok=True)
         
         files = [
-            (f'{self._data_prefix}.json', '{"root": []}'),
+            (f'{self._data_prefix}.json', '[]'),
             (f'{self._data_prefix}.csv', ''),
             (f'{self._data_prefix}-2-digits.csv', ''),
             (f'{self._data_prefix}-sparse.csv', '')
@@ -55,10 +55,12 @@ class LotteryBase(ABC):
                 return
 
             with open(file_path, 'r', encoding='utf-8') as f:
-                data = self._ResultListModel.model_validate_json(f.read())
+                json_data = json.load(f)
             
+            data = [self._ResultModel.model_validate(item) for item in json_data]
+
             # Handle both single and list of results per date
-            for d in data.root:
+            for d in data:
                 if isinstance(d, list): # For multi-province results
                     if d[0].date not in self._data:
                         self._data[d[0].date] = []
@@ -87,13 +89,10 @@ class LotteryBase(ABC):
         
         data_list.sort(key=lambda x: x.date)
         
-        # Create ResultListModel
-        result_list_instance = self._ResultListModel(root=data_list)
-        
         # Save JSON
         json_file_path = Path('data') / f'{self._data_prefix}.json'
         with open(json_file_path, 'w', encoding='utf-8') as f:
-            json.dump(result_list_instance.model_dump(mode='json'), f, indent=2, ensure_ascii=False)
+            json.dump([item.model_dump(mode='json') for item in data_list], f, indent=2, ensure_ascii=False)
         
         logger.info(f"Saved {len(data_list)} results to {json_file_path}")
         
@@ -161,9 +160,11 @@ class LotteryMultiProvinceBase(LotteryBase):
                 return
 
             with open(file_path, 'r', encoding='utf-8') as f:
-                data = self._ResultListModel.model_validate_json(f.read())
-            
-            for d in data.root:
+                json_data = json.load(f)
+
+            data = [self._ResultModel.model_validate(item) for item in json_data]
+
+            for d in data:
                 if d.date not in self._data:
                     self._data[d.date] = []
                 self._data[d.date].append(d)
@@ -184,9 +185,9 @@ class LotteryMultiProvinceBase(LotteryBase):
         json_file_path = Path('data') / f'{self._data_prefix}.json'
         with open(json_file_path, 'w', encoding='utf-8') as f:
             # Use model_dump() for each item and then json.dump for the list
-            json_data = {'root': [item.model_dump() for item in root]}
+            json_data = [item.model_dump(mode='json') for item in root]
             # import json # Import json here to avoid circular dependency if pydantic uses it
-            json.dump(json_data, f, indent=2, default=str, ensure_ascii=False) # default=str for date objects
+            json.dump(json_data, f, indent=2, ensure_ascii=False) # default=str for date objects
         logger.info(f"Saved {len(root)} results to {json_file_path}")
 
         self._dump_dataframe(self._raw_data, self._data_prefix)
