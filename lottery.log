@@ -1,58 +1,61 @@
-2025-08-16 14:07:34,140 - INFO - Current time in Vietnam: 14:07:34.140822
-2025-08-16 14:07:34,141 - INFO - Before XSMN time, using previous day's data
-2025-08-16 14:07:34,141 - INFO - Date range: 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,183 - INFO - Fetching XSMB from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,214 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,214 - INFO - Successfully loaded existing data from data/xsmb.json
-2025-08-16 14:07:34,214 - INFO - Data for XSMB on 2025-08-08 already exists. Skipping fetch.
-2025-08-16 14:07:34,215 - INFO - Data for XSMB on 2025-08-09 already exists. Skipping fetch.
-2025-08-16 14:07:34,215 - INFO - Data for XSMB on 2025-08-10 already exists. Skipping fetch.
-2025-08-16 14:07:34,215 - INFO - Data for XSMB on 2025-08-11 already exists. Skipping fetch.
-2025-08-16 14:07:34,215 - INFO - Data for XSMB on 2025-08-12 already exists. Skipping fetch.
-2025-08-16 14:07:34,215 - INFO - Data for XSMB on 2025-08-13 already exists. Skipping fetch.
-2025-08-16 14:07:34,215 - INFO - Data for XSMB on 2025-08-14 already exists. Skipping fetch.
-2025-08-16 14:07:34,215 - INFO - Data for XSMB on 2025-08-15 already exists. Skipping fetch.
-2025-08-16 14:07:34,237 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,238 - INFO - Saved 8 results to data/xsmb.json
-2025-08-16 14:07:34,298 - INFO - Saved 8 records to data/xsmb.csv and data/xsmb.parquet
-2025-08-16 14:07:34,310 - INFO - Saved 8 records to data/xsmb-2-digits.csv and data/xsmb-2-digits.parquet
-2025-08-16 14:07:34,334 - INFO - Saved 8 records to data/xsmb-sparse.csv and data/xsmb-sparse.parquet
-2025-08-16 14:07:34,335 - INFO - Successfully fetched 8/8 days of XSMB data
-2025-08-16 14:07:34,373 - INFO - Fetching XSMN from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,614 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,615 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-08-16 14:07:34,615 - INFO - Data for XSMN on 2025-08-08 already exists. Skipping fetch.
-2025-08-16 14:07:34,615 - INFO - Data for XSMN on 2025-08-09 already exists. Skipping fetch.
-2025-08-16 14:07:34,615 - INFO - Data for XSMN on 2025-08-10 already exists. Skipping fetch.
-2025-08-16 14:07:34,615 - INFO - Data for XSMN on 2025-08-11 already exists. Skipping fetch.
-2025-08-16 14:07:34,615 - INFO - Data for XSMN on 2025-08-12 already exists. Skipping fetch.
-2025-08-16 14:07:34,616 - INFO - Data for XSMN on 2025-08-13 already exists. Skipping fetch.
-2025-08-16 14:07:34,616 - INFO - Data for XSMN on 2025-08-14 already exists. Skipping fetch.
-2025-08-16 14:07:34,616 - INFO - Data for XSMN on 2025-08-15 already exists. Skipping fetch.
-2025-08-16 14:07:34,799 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,803 - INFO - Saved 25 results to data/xsmn.json
-2025-08-16 14:07:34,817 - INFO - Saved 25 records to data/xsmn.csv and data/xsmn.parquet
-2025-08-16 14:07:34,830 - INFO - Saved 25 records to data/xsmn-2-digits.csv and data/xsmn-2-digits.parquet
-2025-08-16 14:07:34,869 - INFO - Saved 25 records to data/xsmn-sparse.csv and data/xsmn-sparse.parquet
-2025-08-16 14:07:34,870 - INFO - Successfully fetched 8/8 days of XSMN data
-2025-08-16 14:07:34,899 - INFO - Fetching XSMT from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,997 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:34,997 - INFO - Successfully loaded existing data from data/xsmt.json
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-08 already exists. Skipping fetch.
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-09 already exists. Skipping fetch.
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-10 already exists. Skipping fetch.
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-11 already exists. Skipping fetch.
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-12 already exists. Skipping fetch.
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-13 already exists. Skipping fetch.
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-14 already exists. Skipping fetch.
-2025-08-16 14:07:34,997 - INFO - Data for XSMT on 2025-08-15 already exists. Skipping fetch.
-2025-08-16 14:07:35,092 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
-2025-08-16 14:07:35,094 - INFO - Saved 19 results to data/xsmt.json
-2025-08-16 14:07:35,099 - INFO - Saved 19 records to data/xsmt.csv and data/xsmt.parquet
-2025-08-16 14:07:35,106 - INFO - Saved 19 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
-2025-08-16 14:07:35,140 - INFO - Saved 19 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
-2025-08-16 14:07:35,140 - INFO - Successfully fetched 8/8 days of XSMT data
-2025-08-16 14:07:35,141 - INFO - Lottery Data Fetch Summary:
+2025-08-16 14:30:31,331 - INFO - Current time in Vietnam: 14:30:31.331020
+2025-08-16 14:30:31,331 - INFO - Before XSMN time, using previous day's data
+2025-08-16 14:30:31,331 - INFO - Date range: 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,355 - INFO - Fetching XSMB from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,381 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,381 - INFO - Successfully loaded existing data from data/xsmb.json
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-08 already exists. Skipping fetch.
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-09 already exists. Skipping fetch.
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-10 already exists. Skipping fetch.
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-11 already exists. Skipping fetch.
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-12 already exists. Skipping fetch.
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-13 already exists. Skipping fetch.
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-14 already exists. Skipping fetch.
+2025-08-16 14:30:31,382 - INFO - Data for XSMB on 2025-08-15 already exists. Skipping fetch.
+2025-08-16 14:30:31,414 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,416 - INFO - Saved 8 results to data/xsmb.json
+2025-08-16 14:30:31,455 - INFO - Saved 8 records to data/xsmb.csv and data/xsmb.parquet
+2025-08-16 14:30:31,467 - INFO - Saved 8 records to data/xsmb-2-digits.csv and data/xsmb-2-digits.parquet
+2025-08-16 14:30:31,486 - INFO - Saved 8 records to data/xsmb-sparse.csv and data/xsmb-sparse.parquet
+2025-08-16 14:30:31,487 - INFO - Successfully saved sparse data to data/xsmb-sparse.json
+2025-08-16 14:30:31,488 - INFO - Successfully fetched 8/8 days of XSMB data
+2025-08-16 14:30:31,508 - INFO - Fetching XSMN from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,526 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,527 - INFO - Successfully loaded existing data from data/xsmn.json
+2025-08-16 14:30:31,527 - INFO - Data for XSMN on 2025-08-08 already exists. Skipping fetch.
+2025-08-16 14:30:31,527 - INFO - Data for XSMN on 2025-08-09 already exists. Skipping fetch.
+2025-08-16 14:30:31,528 - INFO - Data for XSMN on 2025-08-10 already exists. Skipping fetch.
+2025-08-16 14:30:31,528 - INFO - Data for XSMN on 2025-08-11 already exists. Skipping fetch.
+2025-08-16 14:30:31,528 - INFO - Data for XSMN on 2025-08-12 already exists. Skipping fetch.
+2025-08-16 14:30:31,528 - INFO - Data for XSMN on 2025-08-13 already exists. Skipping fetch.
+2025-08-16 14:30:31,528 - INFO - Data for XSMN on 2025-08-14 already exists. Skipping fetch.
+2025-08-16 14:30:31,528 - INFO - Data for XSMN on 2025-08-15 already exists. Skipping fetch.
+2025-08-16 14:30:31,546 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,549 - INFO - Saved 25 results to data/xsmn.json
+2025-08-16 14:30:31,555 - INFO - Saved 25 records to data/xsmn.csv and data/xsmn.parquet
+2025-08-16 14:30:31,561 - INFO - Saved 25 records to data/xsmn-2-digits.csv and data/xsmn-2-digits.parquet
+2025-08-16 14:30:31,588 - INFO - Saved 25 records to data/xsmn-sparse.csv and data/xsmn-sparse.parquet
+2025-08-16 14:30:31,593 - INFO - Successfully saved sparse data to data/xsmn-sparse.json
+2025-08-16 14:30:31,593 - INFO - Successfully fetched 8/8 days of XSMN data
+2025-08-16 14:30:31,621 - INFO - Fetching XSMT from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,638 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,638 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-08-16 14:30:31,638 - INFO - Data for XSMT on 2025-08-08 already exists. Skipping fetch.
+2025-08-16 14:30:31,638 - INFO - Data for XSMT on 2025-08-09 already exists. Skipping fetch.
+2025-08-16 14:30:31,638 - INFO - Data for XSMT on 2025-08-10 already exists. Skipping fetch.
+2025-08-16 14:30:31,638 - INFO - Data for XSMT on 2025-08-11 already exists. Skipping fetch.
+2025-08-16 14:30:31,639 - INFO - Data for XSMT on 2025-08-12 already exists. Skipping fetch.
+2025-08-16 14:30:31,639 - INFO - Data for XSMT on 2025-08-13 already exists. Skipping fetch.
+2025-08-16 14:30:31,639 - INFO - Data for XSMT on 2025-08-14 already exists. Skipping fetch.
+2025-08-16 14:30:31,639 - INFO - Data for XSMT on 2025-08-15 already exists. Skipping fetch.
+2025-08-16 14:30:31,656 - INFO - Generated dataframes with data from 2025-08-08 to 2025-08-15
+2025-08-16 14:30:31,657 - INFO - Saved 19 results to data/xsmt.json
+2025-08-16 14:30:31,665 - INFO - Saved 19 records to data/xsmt.csv and data/xsmt.parquet
+2025-08-16 14:30:31,671 - INFO - Saved 19 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-08-16 14:30:31,688 - INFO - Saved 19 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-08-16 14:30:31,690 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
+2025-08-16 14:30:31,690 - INFO - Successfully fetched 8/8 days of XSMT data
+2025-08-16 14:30:31,691 - INFO - Lottery Data Fetch Summary:
 XSMB: succeeded
 XSMN: succeeded
 XSMT: succeeded

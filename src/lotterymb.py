@@ -132,24 +132,32 @@ class LotteryMB(LotteryBase):
             return
             
         # Generate raw dataframe
-        self._raw_data = pd.DataFrame([d.model_dump() for d in self._data.values()])
+        records = [d.model_dump() for d in self._data.values()]
+        self._raw_data = pd.DataFrame(records)
         self._raw_data['date'] = pd.to_datetime(self._raw_data['date'])
         
-        # Convert numeric columns to int64
         numeric_columns = self._raw_data.columns.difference(['date'])
         self._raw_data[numeric_columns] = self._raw_data[numeric_columns].astype('int64')
         
         # Generate 2-digits dataframe
-        self._2_digits_data = copy(self._raw_data)
+        self._2_digits_data = self._raw_data.copy()
         self._2_digits_data[numeric_columns] = self._2_digits_data[numeric_columns].apply(lambda x: x % 100)
         
         # Generate sparse dataframe
-        self._sparse_data = pd.concat(
-            [
-                self._2_digits_data.iloc[:, 0:1],
-                pd.DataFrame(np.zeros((self._2_digits_data.shape[0], 100), dtype=int)),
-            ],
-            axis=1,
-        )
+        sparse_records = []
+        for record in records:
+            sparse_record = {'date': record['date'], **{str(i): 0 for i in range(100)}}
+            all_numbers = [value for key, value in record.items() if key != 'date']
+            for number in all_numbers:
+                last_two_digits = number % 100
+                sparse_record[str(last_two_digits)] += 1
+            sparse_records.append(sparse_record)
+            
+        self._sparse_data = pd.DataFrame(sparse_records)
+        self._sparse_data['date'] = pd.to_datetime(self._sparse_data['date'])
         
+        # Set column names for sparse data
+        column_names = ['date'] + [str(i) for i in range(100)]
+        self._sparse_data.columns = column_names
+
         logger.info(f"Generated dataframes with data from {min(self._data.keys())} to {max(self._data.keys())}")

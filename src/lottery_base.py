@@ -120,6 +120,51 @@ class LotteryBase(ABC):
         """Abstract method to generate pandas DataFrames from fetched data."""
         pass
 
+    def generate_and_dump_sparse_json(self) -> None:
+        """Generates a sparse representation of 2-digit number frequencies and saves it to a JSON file."""
+        if not self._data:
+            logger.info("No data available to generate sparse JSON.")
+            return
+
+        sparse_records = []
+        
+        # Sort dates to ensure chronological order in the output
+        sorted_dates = sorted(self._data.keys())
+
+        for selected_date in sorted_dates:
+            results = self._data[selected_date]
+            
+            # Initialize a frequency count for all numbers from 00 to 99
+            record = {"date": selected_date.isoformat(), **{str(i): 0 for i in range(100)}}
+            
+            all_numbers = []
+            
+            # Handle both single result (MB) and list of results (MN/MT)
+            if not isinstance(results, list):
+                results = [results]
+
+            for result in results:
+                # Iterate through the Pydantic model fields to get all prize numbers
+                for field_name, field_value in result:
+                    if isinstance(field_value, int) and ('prize' in field_name or 'special' in field_name):
+                        all_numbers.append(field_value)
+
+            # Calculate frequency of last two digits
+            for number in all_numbers:
+                last_two_digits = number % 100
+                record[str(last_two_digits)] += 1
+            
+            sparse_records.append(record)
+
+        # Save to JSON file
+        file_path = Path('data') / f'{self._data_prefix}-sparse.json'
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump(sparse_records, f, indent=2, ensure_ascii=False)
+            logger.info(f"Successfully saved sparse data to {file_path}")
+        except Exception as e:
+            logger.error(f"Error saving sparse JSON to {file_path}: {e}")
+
     def get_last_date(self) -> date:
         if not self._data:
             return self._last_date # Returns today's date from init if no data

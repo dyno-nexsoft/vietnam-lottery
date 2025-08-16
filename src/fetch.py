@@ -51,6 +51,7 @@ def _fetch_lottery_data(lottery_instance: LotteryBase, lottery_type: str, start_
         if success_count > 0:
             lottery_instance.generate_dataframes()
             lottery_instance.dump()
+            lottery_instance.generate_and_dump_sparse_json()
             logger.info(f"Successfully fetched {success_count}/{delta} days of {lottery_type} data")
             return True
         else:

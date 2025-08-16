@@ -62,19 +62,22 @@ class LotteryMN(LotteryMultiProvinceBase):
         self._2_digits_data = copy(self._raw_data)
         self._2_digits_data[numeric_cols] = self._2_digits_data[numeric_cols].apply(lambda x: x % 100)
 
-        self._sparse_data = pd.concat(
-            [
-                self._2_digits_data[['date', 'province']],
-                pd.DataFrame(np.zeros((len(self._2_digits_data), 100), dtype=int)),
-            ],
-            axis=1,
-        )
+        # Generate sparse dataframe
+        sparse_records = []
+        for record in all_results:
+            sparse_record = {'date': record['date'], 'province': record['province'], **{str(i): 0 for i in range(100)}}
+            all_numbers = [value for key, value in record.items() if key not in ['date', 'province']]
+            for number in all_numbers:
+                last_two_digits = number % 100
+                sparse_record[str(last_two_digits)] += 1
+            sparse_records.append(sparse_record)
+            
+        self._sparse_data = pd.DataFrame(sparse_records)
+        self._sparse_data['date'] = pd.to_datetime(self._sparse_data['date'])
         
-        for i in range(len(self._2_digits_data)):
-            counts = self._2_digits_data.iloc[i, 2:].value_counts()
-            for k, v in counts.items():
-                if 0 <= k < 100:  # Ensure the number is within valid range
-                    self._sparse_data.iloc[i, k + 2] = int(v)
+        # Set column names for sparse data
+        column_names = ['date', 'province'] + [str(i) for i in range(100)]
+        self._sparse_data.columns = column_names
 
         if not self._raw_data.empty:
             begin_date = self._raw_data['date'].min()
