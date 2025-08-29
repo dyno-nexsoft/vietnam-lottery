@@ -2,7 +2,9 @@ name: Update data
 
 on:
   schedule:
-    - cron: "45 11 * * *" # 18:45 (6:45 PM) in Vietnam - 10 minutes after XSMB results
+    - cron: "45 9 * * *"  # 16:45 (4:45 PM) in Vietnam - For XSMN
+    - cron: "45 10 * * *" # 17:45 (5:45 PM) in Vietnam - For XSMT
+    - cron: "45 11 * * *" # 18:45 (6:45 PM) in Vietnam - For XSMB
   workflow_dispatch: # Allow manual trigger
 
 env:
@@ -35,8 +37,21 @@ jobs:
       - name: Debug - Print Pydantic version
         run: pip show pydantic
 
-      - name: fetch data
-        run: python -m src.fetch --end ${{ env.date }}
+      - name: Fetch Lottery Data
+        run: |
+          if [ "${{ github.event.schedule }}" == "45 9 * * *" ]; then
+            echo "Fetching Southern region (XSMN) data"
+            python -m src.fetch --end ${{ env.date }} --region MN
+          elif [ "${{ github.event.schedule }}" == "45 10 * * *" ]; then
+            echo "Fetching Central region (XSMT) data"
+            python -m src.fetch --end ${{ env.date }} --region MT
+          elif [ "${{ github.event.schedule }}" == "45 11 * * *" ]; then
+            echo "Fetching Northern region (XSMB) data"
+            python -m src.fetch --end ${{ env.date }} --region MB
+          else
+            echo "Manual run or unknown schedule, fetching all regions"
+            python -m src.fetch --end ${{ env.date }}
+          fi
 
       - name: Generate lottery predictions
         run: python src/lottery_analyzer.py

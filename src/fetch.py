@@ -41,7 +41,7 @@ def _fetch_lottery_data(lottery_instance: LotteryBase, lottery_type: str, start_
             try:
                 logger.info(f'Fetching {lottery_type}: {selected_date}')
                 result = lottery_instance.fetch(selected_date)
-                if result is not None: # Assuming fetch returns None on failure
+                if result: # Check if result is not None and not an empty list
                     success_count += 1
                 else:
                     logger.warning(f"No data or invalid data for {lottery_type} on {selected_date}")
@@ -70,63 +70,69 @@ def parse_date(date_str: str) -> date:
     except ValueError as e:
         raise argparse.ArgumentTypeError(f"Invalid date format: {e}. Use YYYY-MM-DD")
 
-def get_date_range(start_date: date = None, end_date: date = None) -> tuple[date, date]:
+def get_date_range(args: argparse.Namespace) -> tuple[date, date]:
     """Get start and end dates based on input or current time"""
+    start_date, end_date = args.start, args.end
+
     if end_date is None:
         tz = ZoneInfo('Asia/Ho_Chi_Minh')
         now = datetime.now(tz)
         end_date = now.date()
-        
-        # Adjust end date based on lottery result times
-        current_time = now.time()
-        logger.info(f"Current time in Vietnam: {current_time}")
-        
-        if current_time < time(16, 35):  # Before XSMN
-            logger.info("Before XSMN time, using previous day's data")
-            end_date -= timedelta(days=1)
-        elif current_time < time(17, 35):  # Before XSMT
-            logger.info("Can fetch XSMN but not XSMT/XSMB")
-            pass
-        elif current_time < time(18, 35):  # Before XSMB
-            logger.info("Can fetch XSMN and XSMT but not XSMB")
-            pass
-    
+        logger.info(f"Current time in Vietnam: {now.time()}")
+
     if start_date is None:
+        data_file = 'data/xsmb.csv' # default
+        if args.region:
+            # The region argument is a list, so we take the first element.
+            region_code = args.region.lower()
+            data_file = f'data/xs{region_code}.csv'
+
         try:
             import pandas as pd
-            # Read the last date from the existing data
-            df = pd.read_csv('data/xsmb.csv')
+            df = pd.read_csv(data_file)
             latest_date_str = df['date'].max()
             latest_date = datetime.strptime(latest_date_str, '%Y-%m-%d').date()
-            start_date = latest_date + timedelta(days=1)
+            
+            if latest_date < end_date:
+                start_date = latest_date + timedelta(days=1)
+            else:
+                start_date = end_date
+
         except (FileNotFoundError, pd.errors.EmptyDataError, KeyError):
-            # If the file doesn't exist or is empty, start from 7 days ago
-            logger.warning("Could not determine latest date from data. Defaulting to 7 days ago.")
+            logger.warning(f"Could not determine latest date from {data_file}. Defaulting to 7 days ago.")
             start_date = end_date - timedelta(days=7)
 
-    
     logger.info(f"Date range: {start_date} to {end_date}")
     return start_date, end_date
 
 
 if __name__ == '__main__':
     try:
-        parser = argparse.ArgumentParser(description='Fetch lottery results for all regions')
+        parser = argparse.ArgumentParser(description='Fetch lottery results for specific or all regions')
         parser.add_argument('--start', type=parse_date, help='Start date in format YYYY-MM-DD')
         parser.add_argument('--end', type=parse_date, help='End date in format YYYY-MM-DD')
+        parser.add_argument('--region', type=str, choices=['MB', 'MN', 'MT'], help='Specify lottery region to fetch.')
         
         args = parser.parse_args()
-        start_date, end_date = get_date_range(args.start, args.end)
+        start_date, end_date = get_date_range(args)
         
         if start_date > end_date:
             parser.error("Start date cannot be after end date")
-        
-        # Fetch all three regions using the generic function
-        success = {
-            'XSMB': _fetch_lottery_data(LotteryMB(), 'XSMB', start_date, end_date),
-            'XSMN': _fetch_lottery_data(LotteryMN(), 'XSMN', start_date, end_date),
-            'XSMT': _fetch_lottery_data(LotteryMT(), 'XSMT', start_date, end_date)
+
+        region_map = {
+            'MB': ('XSMB', LotteryMB()),
+            'MN': ('XSMN', LotteryMN()),
+            'MT': ('XSMT', LotteryMT())
         }
+
+        regions_to_process = [args.region] if args.region else region_map.keys()
+        
+        success = {}
+        for region_code in regions_to_process:
+            if region_code in region_map:
+                region_name, lottery_instance = region_map[region_code]
+                status = _fetch_lottery_data(lottery_instance, region_name, start_date, end_date)
+                success[region_name] = status
         
         # Log summary
         summary = []
@@ -134,8 +140,11 @@ if __name__ == '__main__':
             result = "succeeded" if status else "failed"
             summary.append(f"{region}: {result}")
         
-        summary_msg = "Lottery Data Fetch Summary:\n" + "\n".join(summary)
-        logger.info(summary_msg)
+        if summary:
+            summary_msg = "Lottery Data Fetch Summary:\n" + "\n".join(summary)
+            logger.info(summary_msg)
+        else:
+            logger.info("No regions were processed.")
         
     except Exception as e:
         error_msg = f"Critical error in lottery fetch process: {str(e)}"
