@@ -1,12 +1,21 @@
-2025-09-07 16:53:14,699 - INFO - Date range: 2025-09-07 to 2025-09-07
-2025-09-07 16:53:14,778 - INFO - Fetching XSMN from 2025-09-07 to 2025-09-07
-2025-09-07 16:53:14,795 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-06
-2025-09-07 16:53:14,795 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-09-07 16:53:14,795 - INFO - Fetching XSMN: 2025-09-07
-2025-09-07 16:53:14,795 - INFO - Fetching URL: https://xoso.com.vn/xsmn-07-09-2025.html
-2025-09-07 16:53:15,264 - INFO - Response status: 408
-2025-09-07 16:53:15,264 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmn-07-09-2025.html, status code: 408
-2025-09-07 16:53:15,264 - WARNING - No data or invalid data for XSMN on 2025-09-07
-2025-09-07 16:53:15,264 - ERROR - No valid XSMN data fetched
-2025-09-07 16:53:15,264 - INFO - Lottery Data Fetch Summary:
-XSMN: failed
+2025-09-07 17:49:47,959 - INFO - Date range: 2025-09-07 to 2025-09-07
+2025-09-07 17:49:48,037 - INFO - Fetching XSMT from 2025-09-07 to 2025-09-07
+2025-09-07 17:49:48,053 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-06
+2025-09-07 17:49:48,053 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-09-07 17:49:48,053 - INFO - Fetching XSMT: 2025-09-07
+2025-09-07 17:49:48,053 - INFO - Fetching URL: https://xoso.com.vn/xsmt-07-09-2025.html
+2025-09-07 17:49:49,749 - INFO - Response status: 200
+2025-09-07 17:49:49,774 - INFO - Found provinces: Huế, Kon Tum, Khánh Hòa
+2025-09-07 17:49:49,775 - INFO - Successfully processed data for Huế on 2025-09-07
+2025-09-07 17:49:49,775 - INFO - Successfully processed data for Kon Tum on 2025-09-07
+2025-09-07 17:49:49,775 - INFO - Successfully processed data for Khánh Hòa on 2025-09-07
+2025-09-07 17:49:49,775 - INFO - Successfully fetched 3 results for date 2025-09-07
+2025-09-07 17:49:49,792 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-07
+2025-09-07 17:49:49,794 - INFO - Saved 76 results to data/xsmt.json
+2025-09-07 17:49:49,828 - INFO - Saved 76 records to data/xsmt.csv and data/xsmt.parquet
+2025-09-07 17:49:49,831 - INFO - Saved 76 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-09-07 17:49:49,841 - INFO - Saved 76 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-09-07 17:49:49,845 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
+2025-09-07 17:49:49,845 - INFO - Successfully fetched 1/1 days of XSMT data
+2025-09-07 17:49:49,845 - INFO - Lottery Data Fetch Summary:
+XSMT: succeeded
