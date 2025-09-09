@@ -1,20 +1,17 @@
-2025-09-09 17:51:12,304 - INFO - Date range: 2025-09-09 to 2025-09-09
-2025-09-09 17:51:12,382 - INFO - Fetching XSMT from 2025-09-09 to 2025-09-09
-2025-09-09 17:51:12,398 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-08
-2025-09-09 17:51:12,398 - INFO - Successfully loaded existing data from data/xsmt.json
-2025-09-09 17:51:12,398 - INFO - Fetching XSMT: 2025-09-09
-2025-09-09 17:51:12,398 - INFO - Fetching URL: https://xoso.com.vn/xsmt-09-09-2025.html
-2025-09-09 17:51:28,574 - INFO - Response status: 200
-2025-09-09 17:51:28,596 - INFO - Found provinces: Đắk Lắk, Quảng Nam
-2025-09-09 17:51:28,597 - INFO - Successfully processed data for Đắk Lắk on 2025-09-09
-2025-09-09 17:51:28,597 - INFO - Successfully processed data for Quảng Nam on 2025-09-09
-2025-09-09 17:51:28,597 - INFO - Successfully fetched 2 results for date 2025-09-09
-2025-09-09 17:51:28,611 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-09
-2025-09-09 17:51:28,613 - INFO - Saved 80 results to data/xsmt.json
-2025-09-09 17:51:28,653 - INFO - Saved 80 records to data/xsmt.csv and data/xsmt.parquet
-2025-09-09 17:51:28,657 - INFO - Saved 80 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
-2025-09-09 17:51:28,666 - INFO - Saved 80 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
-2025-09-09 17:51:28,670 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
-2025-09-09 17:51:28,670 - INFO - Successfully fetched 1/1 days of XSMT data
-2025-09-09 17:51:28,670 - INFO - Lottery Data Fetch Summary:
-XSMT: succeeded
+2025-09-09 18:49:42,081 - INFO - Date range: 2025-09-09 to 2025-09-09
+2025-09-09 18:49:42,157 - INFO - Fetching XSMB from 2025-09-09 to 2025-09-09
+2025-09-09 18:49:42,172 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-08
+2025-09-09 18:49:42,172 - INFO - Successfully loaded existing data from data/xsmb.json
+2025-09-09 18:49:42,172 - INFO - Fetching XSMB: 2025-09-09
+2025-09-09 18:49:42,172 - INFO - Fetching URL: https://xoso.com.vn/xsmb-09-09-2025.html
+2025-09-09 18:49:43,255 - INFO - Response status: 200
+2025-09-09 18:49:43,280 - INFO - Successfully fetched data for 2025-09-09
+2025-09-09 18:49:43,300 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-09
+2025-09-09 18:49:43,301 - INFO - Saved 33 results to data/xsmb.json
+2025-09-09 18:49:43,388 - INFO - Saved 33 records to data/xsmb.csv and data/xsmb.parquet
+2025-09-09 18:49:43,392 - INFO - Saved 33 records to data/xsmb-2-digits.csv and data/xsmb-2-digits.parquet
+2025-09-09 18:49:43,401 - INFO - Saved 33 records to data/xsmb-sparse.csv and data/xsmb-sparse.parquet
+2025-09-09 18:49:43,404 - INFO - Successfully saved sparse data to data/xsmb-sparse.json
+2025-09-09 18:49:43,404 - INFO - Successfully fetched 1/1 days of XSMB data
+2025-09-09 18:49:43,404 - INFO - Lottery Data Fetch Summary:
+XSMB: succeeded
