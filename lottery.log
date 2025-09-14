@@ -1,30 +1,21 @@
-2025-09-14 16:53:22,765 - INFO - Date range: 2025-09-13 to 2025-09-14
-2025-09-14 16:53:22,842 - INFO - Fetching XSMN from 2025-09-13 to 2025-09-14
-2025-09-14 16:53:22,860 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-12
-2025-09-14 16:53:22,860 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-09-14 16:53:22,860 - INFO - Fetching XSMN: 2025-09-13
-2025-09-14 16:53:22,860 - INFO - Fetching URL: https://xoso.com.vn/xsmn-13-09-2025.html
-2025-09-14 16:53:24,273 - INFO - Response status: 200
-2025-09-14 16:53:24,301 - INFO - Found provinces: TPHCM, Long An, Bình Phước, Hậu Giang
-2025-09-14 16:53:24,301 - INFO - Successfully processed data for TPHCM on 2025-09-13
-2025-09-14 16:53:24,301 - INFO - Successfully processed data for Long An on 2025-09-13
-2025-09-14 16:53:24,302 - INFO - Successfully processed data for Bình Phước on 2025-09-13
-2025-09-14 16:53:24,302 - INFO - Successfully processed data for Hậu Giang on 2025-09-13
-2025-09-14 16:53:24,302 - INFO - Successfully fetched 4 results for date 2025-09-13
-2025-09-14 16:53:24,302 - INFO - Fetching XSMN: 2025-09-14
-2025-09-14 16:53:24,302 - INFO - Fetching URL: https://xoso.com.vn/xsmn-14-09-2025.html
-2025-09-14 16:53:25,086 - INFO - Response status: 200
-2025-09-14 16:53:25,110 - INFO - Found provinces: Tiền Giang, Kiên Giang, Đà Lạt
-2025-09-14 16:53:25,111 - INFO - Successfully processed data for Tiền Giang on 2025-09-14
-2025-09-14 16:53:25,111 - INFO - Successfully processed data for Kiên Giang on 2025-09-14
-2025-09-14 16:53:25,111 - INFO - Successfully processed data for Đà Lạt on 2025-09-14
-2025-09-14 16:53:25,111 - INFO - Successfully fetched 3 results for date 2025-09-14
-2025-09-14 16:53:25,127 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-14
-2025-09-14 16:53:25,130 - INFO - Saved 120 results to data/xsmn.json
-2025-09-14 16:53:25,151 - INFO - Saved 120 records to data/xsmn.csv and data/xsmn.parquet
-2025-09-14 16:53:25,155 - INFO - Saved 120 records to data/xsmn-2-digits.csv and data/xsmn-2-digits.parquet
-2025-09-14 16:53:25,165 - INFO - Saved 120 records to data/xsmn-sparse.csv and data/xsmn-sparse.parquet
-2025-09-14 16:53:25,169 - INFO - Successfully saved sparse data to data/xsmn-sparse.json
-2025-09-14 16:53:25,170 - INFO - Successfully fetched 2/2 days of XSMN data
-2025-09-14 16:53:25,170 - INFO - Lottery Data Fetch Summary:
-XSMN: succeeded
+2025-09-14 17:49:42,695 - INFO - Date range: 2025-09-14 to 2025-09-14
+2025-09-14 17:49:42,773 - INFO - Fetching XSMT from 2025-09-14 to 2025-09-14
+2025-09-14 17:49:42,789 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-13
+2025-09-14 17:49:42,789 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-09-14 17:49:42,789 - INFO - Fetching XSMT: 2025-09-14
+2025-09-14 17:49:42,790 - INFO - Fetching URL: https://xoso.com.vn/xsmt-14-09-2025.html
+2025-09-14 17:49:43,461 - INFO - Response status: 200
+2025-09-14 17:49:43,485 - INFO - Found provinces: Huế, Kon Tum, Khánh Hòa
+2025-09-14 17:49:43,485 - INFO - Successfully processed data for Huế on 2025-09-14
+2025-09-14 17:49:43,485 - INFO - Successfully processed data for Kon Tum on 2025-09-14
+2025-09-14 17:49:43,486 - INFO - Successfully processed data for Khánh Hòa on 2025-09-14
+2025-09-14 17:49:43,486 - INFO - Successfully fetched 3 results for date 2025-09-14
+2025-09-14 17:49:43,504 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-14
+2025-09-14 17:49:43,547 - INFO - Saved 93 results to data/xsmt.json
+2025-09-14 17:49:43,910 - INFO - Saved 93 records to data/xsmt.csv and data/xsmt.parquet
+2025-09-14 17:49:43,913 - INFO - Saved 93 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-09-14 17:49:43,923 - INFO - Saved 93 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-09-14 17:49:43,927 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
+2025-09-14 17:49:43,927 - INFO - Successfully fetched 1/1 days of XSMT data
+2025-09-14 17:49:43,928 - INFO - Lottery Data Fetch Summary:
+XSMT: succeeded
