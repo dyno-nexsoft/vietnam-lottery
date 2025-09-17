@@ -1,12 +1,20 @@
-2025-09-17 16:53:26,876 - INFO - Date range: 2025-09-17 to 2025-09-17
-2025-09-17 16:53:26,955 - INFO - Fetching XSMN from 2025-09-17 to 2025-09-17
-2025-09-17 16:53:26,974 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-16
-2025-09-17 16:53:26,974 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-09-17 16:53:26,975 - INFO - Fetching XSMN: 2025-09-17
-2025-09-17 16:53:26,975 - INFO - Fetching URL: https://xoso.com.vn/xsmn-17-09-2025.html
-2025-09-17 16:53:28,253 - INFO - Response status: 408
-2025-09-17 16:53:28,253 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmn-17-09-2025.html, status code: 408
-2025-09-17 16:53:28,253 - WARNING - No data or invalid data for XSMN on 2025-09-17
-2025-09-17 16:53:28,253 - ERROR - No valid XSMN data fetched
-2025-09-17 16:53:28,253 - INFO - Lottery Data Fetch Summary:
-XSMN: failed
+2025-09-17 17:49:57,571 - INFO - Date range: 2025-09-17 to 2025-09-17
+2025-09-17 17:49:57,650 - INFO - Fetching XSMT from 2025-09-17 to 2025-09-17
+2025-09-17 17:49:57,668 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-16
+2025-09-17 17:49:57,668 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-09-17 17:49:57,668 - INFO - Fetching XSMT: 2025-09-17
+2025-09-17 17:49:57,668 - INFO - Fetching URL: https://xoso.com.vn/xsmt-17-09-2025.html
+2025-09-17 17:49:59,141 - INFO - Response status: 200
+2025-09-17 17:49:59,163 - INFO - Found provinces: Đà Nẵng, Khánh Hòa
+2025-09-17 17:49:59,163 - INFO - Successfully processed data for Đà Nẵng on 2025-09-17
+2025-09-17 17:49:59,163 - INFO - Successfully processed data for Khánh Hòa on 2025-09-17
+2025-09-17 17:49:59,164 - INFO - Successfully fetched 2 results for date 2025-09-17
+2025-09-17 17:49:59,179 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-17
+2025-09-17 17:49:59,181 - INFO - Saved 99 results to data/xsmt.json
+2025-09-17 17:49:59,250 - INFO - Saved 99 records to data/xsmt.csv and data/xsmt.parquet
+2025-09-17 17:49:59,254 - INFO - Saved 99 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-09-17 17:49:59,264 - INFO - Saved 99 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-09-17 17:49:59,268 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
+2025-09-17 17:49:59,268 - INFO - Successfully fetched 1/1 days of XSMT data
+2025-09-17 17:49:59,268 - INFO - Lottery Data Fetch Summary:
+XSMT: succeeded
