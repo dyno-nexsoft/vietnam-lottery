@@ -1,12 +1,28 @@
-2025-09-20 16:53:13,308 - INFO - Date range: 2025-09-20 to 2025-09-20
-2025-09-20 16:53:13,386 - INFO - Fetching XSMN from 2025-09-20 to 2025-09-20
-2025-09-20 16:53:13,406 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-19
-2025-09-20 16:53:13,406 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-09-20 16:53:13,406 - INFO - Fetching XSMN: 2025-09-20
-2025-09-20 16:53:13,406 - INFO - Fetching URL: https://xoso.com.vn/xsmn-20-09-2025.html
-2025-09-20 16:53:15,414 - INFO - Response status: 408
-2025-09-20 16:53:15,414 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmn-20-09-2025.html, status code: 408
-2025-09-20 16:53:15,414 - WARNING - No data or invalid data for XSMN on 2025-09-20
-2025-09-20 16:53:15,414 - ERROR - No valid XSMN data fetched
-2025-09-20 16:53:15,414 - INFO - Lottery Data Fetch Summary:
-XSMN: failed
+2025-09-20 17:50:21,949 - INFO - Date range: 2025-09-19 to 2025-09-20
+2025-09-20 17:50:22,026 - INFO - Fetching XSMT from 2025-09-19 to 2025-09-20
+2025-09-20 17:50:22,042 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-18
+2025-09-20 17:50:22,043 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-09-20 17:50:22,043 - INFO - Fetching XSMT: 2025-09-19
+2025-09-20 17:50:22,043 - INFO - Fetching URL: https://xoso.com.vn/xsmt-19-09-2025.html
+2025-09-20 17:50:22,835 - INFO - Response status: 200
+2025-09-20 17:50:22,857 - INFO - Found provinces: Gia Lai, Ninh Thuận
+2025-09-20 17:50:22,858 - INFO - Successfully processed data for Gia Lai on 2025-09-19
+2025-09-20 17:50:22,858 - INFO - Successfully processed data for Ninh Thuận on 2025-09-19
+2025-09-20 17:50:22,858 - INFO - Successfully fetched 2 results for date 2025-09-19
+2025-09-20 17:50:22,858 - INFO - Fetching XSMT: 2025-09-20
+2025-09-20 17:50:22,858 - INFO - Fetching URL: https://xoso.com.vn/xsmt-20-09-2025.html
+2025-09-20 17:50:23,321 - INFO - Response status: 200
+2025-09-20 17:50:23,348 - INFO - Found provinces: Đà Nẵng, Quảng Ngãi, Đắk Nông
+2025-09-20 17:50:23,349 - INFO - Successfully processed data for Đà Nẵng on 2025-09-20
+2025-09-20 17:50:23,349 - INFO - Successfully processed data for Quảng Ngãi on 2025-09-20
+2025-09-20 17:50:23,349 - INFO - Successfully processed data for Đắk Nông on 2025-09-20
+2025-09-20 17:50:23,349 - INFO - Successfully fetched 3 results for date 2025-09-20
+2025-09-20 17:50:23,365 - INFO - Generated dataframes with data from 2025-08-08 to 2025-09-20
+2025-09-20 17:50:23,368 - INFO - Saved 107 results to data/xsmt.json
+2025-09-20 17:50:23,445 - INFO - Saved 107 records to data/xsmt.csv and data/xsmt.parquet
+2025-09-20 17:50:23,448 - INFO - Saved 107 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-09-20 17:50:23,458 - INFO - Saved 107 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-09-20 17:50:23,463 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
+2025-09-20 17:50:23,463 - INFO - Successfully fetched 2/2 days of XSMT data
+2025-09-20 17:50:23,463 - INFO - Lottery Data Fetch Summary:
+XSMT: succeeded
