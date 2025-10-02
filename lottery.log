@@ -1,21 +1,12 @@
-2025-10-02 16:53:08,054 - INFO - Date range: 2025-10-02 to 2025-10-02
-2025-10-02 16:53:08,134 - INFO - Fetching XSMN from 2025-10-02 to 2025-10-02
-2025-10-02 16:53:08,156 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-01
-2025-10-02 16:53:08,156 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-10-02 16:53:08,156 - INFO - Fetching XSMN: 2025-10-02
-2025-10-02 16:53:08,156 - INFO - Fetching URL: https://xoso.com.vn/xsmn-02-10-2025.html
-2025-10-02 16:53:09,804 - INFO - Response status: 200
-2025-10-02 16:53:09,831 - INFO - Found provinces: Tây Ninh, An Giang, Bình Thuận
-2025-10-02 16:53:09,832 - INFO - Successfully processed data for Tây Ninh on 2025-10-02
-2025-10-02 16:53:09,832 - INFO - Successfully processed data for An Giang on 2025-10-02
-2025-10-02 16:53:09,832 - INFO - Successfully processed data for Bình Thuận on 2025-10-02
-2025-10-02 16:53:09,832 - INFO - Successfully fetched 3 results for date 2025-10-02
-2025-10-02 16:53:09,851 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-02
-2025-10-02 16:53:09,855 - INFO - Saved 176 results to data/xsmn.json
-2025-10-02 16:53:09,876 - INFO - Saved 176 records to data/xsmn.csv and data/xsmn.parquet
-2025-10-02 16:53:09,880 - INFO - Saved 176 records to data/xsmn-2-digits.csv and data/xsmn-2-digits.parquet
-2025-10-02 16:53:09,891 - INFO - Saved 176 records to data/xsmn-sparse.csv and data/xsmn-sparse.parquet
-2025-10-02 16:53:09,897 - INFO - Successfully saved sparse data to data/xsmn-sparse.json
-2025-10-02 16:53:09,898 - INFO - Successfully fetched 1/1 days of XSMN data
-2025-10-02 16:53:09,898 - INFO - Lottery Data Fetch Summary:
-XSMN: succeeded
+2025-10-02 17:50:03,463 - INFO - Date range: 2025-10-02 to 2025-10-02
+2025-10-02 17:50:03,541 - INFO - Fetching XSMT from 2025-10-02 to 2025-10-02
+2025-10-02 17:50:03,560 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-01
+2025-10-02 17:50:03,560 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-10-02 17:50:03,561 - INFO - Fetching XSMT: 2025-10-02
+2025-10-02 17:50:03,561 - INFO - Fetching URL: https://xoso.com.vn/xsmt-02-10-2025.html
+2025-10-02 17:50:04,579 - INFO - Response status: 408
+2025-10-02 17:50:04,579 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmt-02-10-2025.html, status code: 408
+2025-10-02 17:50:04,579 - WARNING - No data or invalid data for XSMT on 2025-10-02
+2025-10-02 17:50:04,579 - ERROR - No valid XSMT data fetched
+2025-10-02 17:50:04,579 - INFO - Lottery Data Fetch Summary:
+XSMT: failed
