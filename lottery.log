@@ -1,12 +1,28 @@
-2025-10-06 16:53:25,277 - INFO - Date range: 2025-10-06 to 2025-10-06
-2025-10-06 16:53:25,355 - INFO - Fetching XSMN from 2025-10-06 to 2025-10-06
-2025-10-06 16:53:25,377 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-05
-2025-10-06 16:53:25,377 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-10-06 16:53:25,377 - INFO - Fetching XSMN: 2025-10-06
-2025-10-06 16:53:25,377 - INFO - Fetching URL: https://xoso.com.vn/xsmn-06-10-2025.html
-2025-10-06 16:53:27,062 - INFO - Response status: 408
-2025-10-06 16:53:27,062 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmn-06-10-2025.html, status code: 408
-2025-10-06 16:53:27,062 - WARNING - No data or invalid data for XSMN on 2025-10-06
-2025-10-06 16:53:27,062 - ERROR - No valid XSMN data fetched
-2025-10-06 16:53:27,062 - INFO - Lottery Data Fetch Summary:
-XSMN: failed
+2025-10-06 17:50:12,945 - INFO - Date range: 2025-10-05 to 2025-10-06
+2025-10-06 17:50:13,020 - INFO - Fetching XSMT from 2025-10-05 to 2025-10-06
+2025-10-06 17:50:13,039 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-04
+2025-10-06 17:50:13,040 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-10-06 17:50:13,040 - INFO - Fetching XSMT: 2025-10-05
+2025-10-06 17:50:13,040 - INFO - Fetching URL: https://xoso.com.vn/xsmt-05-10-2025.html
+2025-10-06 17:50:14,366 - INFO - Response status: 200
+2025-10-06 17:50:14,388 - INFO - Found provinces: Huế, Kon Tum, Khánh Hòa
+2025-10-06 17:50:14,389 - INFO - Successfully processed data for Huế on 2025-10-05
+2025-10-06 17:50:14,389 - INFO - Successfully processed data for Kon Tum on 2025-10-05
+2025-10-06 17:50:14,389 - INFO - Successfully processed data for Khánh Hòa on 2025-10-05
+2025-10-06 17:50:14,389 - INFO - Successfully fetched 3 results for date 2025-10-05
+2025-10-06 17:50:14,389 - INFO - Fetching XSMT: 2025-10-06
+2025-10-06 17:50:14,389 - INFO - Fetching URL: https://xoso.com.vn/xsmt-06-10-2025.html
+2025-10-06 17:50:15,117 - INFO - Response status: 200
+2025-10-06 17:50:15,141 - INFO - Found provinces: Huế, Phú Yên
+2025-10-06 17:50:15,142 - INFO - Successfully processed data for Huế on 2025-10-06
+2025-10-06 17:50:15,142 - INFO - Successfully processed data for Phú Yên on 2025-10-06
+2025-10-06 17:50:15,142 - INFO - Successfully fetched 2 results for date 2025-10-06
+2025-10-06 17:50:15,159 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-06
+2025-10-06 17:50:15,163 - INFO - Saved 146 results to data/xsmt.json
+2025-10-06 17:50:15,239 - INFO - Saved 146 records to data/xsmt.csv and data/xsmt.parquet
+2025-10-06 17:50:15,243 - INFO - Saved 146 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-10-06 17:50:15,253 - INFO - Saved 146 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-10-06 17:50:15,260 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
+2025-10-06 17:50:15,260 - INFO - Successfully fetched 2/2 days of XSMT data
+2025-10-06 17:50:15,260 - INFO - Lottery Data Fetch Summary:
+XSMT: succeeded
