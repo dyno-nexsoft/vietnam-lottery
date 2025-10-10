@@ -1,12 +1,20 @@
-2025-10-10 16:53:40,869 - INFO - Date range: 2025-10-10 to 2025-10-10
-2025-10-10 16:53:40,948 - INFO - Fetching XSMN from 2025-10-10 to 2025-10-10
-2025-10-10 16:53:40,972 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-09
-2025-10-10 16:53:40,972 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-10-10 16:53:40,972 - INFO - Fetching XSMN: 2025-10-10
-2025-10-10 16:53:40,972 - INFO - Fetching URL: https://xoso.com.vn/xsmn-10-10-2025.html
-2025-10-10 16:53:41,555 - INFO - Response status: 408
-2025-10-10 16:53:41,555 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmn-10-10-2025.html, status code: 408
-2025-10-10 16:53:41,555 - WARNING - No data or invalid data for XSMN on 2025-10-10
-2025-10-10 16:53:41,555 - ERROR - No valid XSMN data fetched
-2025-10-10 16:53:41,555 - INFO - Lottery Data Fetch Summary:
-XSMN: failed
+2025-10-10 17:50:19,508 - INFO - Date range: 2025-10-10 to 2025-10-10
+2025-10-10 17:50:19,587 - INFO - Fetching XSMT from 2025-10-10 to 2025-10-10
+2025-10-10 17:50:19,609 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-09
+2025-10-10 17:50:19,610 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-10-10 17:50:19,610 - INFO - Fetching XSMT: 2025-10-10
+2025-10-10 17:50:19,610 - INFO - Fetching URL: https://xoso.com.vn/xsmt-10-10-2025.html
+2025-10-10 17:50:20,722 - INFO - Response status: 200
+2025-10-10 17:50:20,743 - INFO - Found provinces: Gia Lai, Ninh Thuận
+2025-10-10 17:50:20,744 - INFO - Successfully processed data for Gia Lai on 2025-10-10
+2025-10-10 17:50:20,744 - INFO - Successfully processed data for Ninh Thuận on 2025-10-10
+2025-10-10 17:50:20,744 - INFO - Successfully fetched 2 results for date 2025-10-10
+2025-10-10 17:50:20,762 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-10
+2025-10-10 17:50:20,766 - INFO - Saved 155 results to data/xsmt.json
+2025-10-10 17:50:20,856 - INFO - Saved 155 records to data/xsmt.csv and data/xsmt.parquet
+2025-10-10 17:50:20,860 - INFO - Saved 155 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
+2025-10-10 17:50:20,871 - INFO - Saved 155 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
+2025-10-10 17:50:20,878 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
+2025-10-10 17:50:20,878 - INFO - Successfully fetched 1/1 days of XSMT data
+2025-10-10 17:50:20,878 - INFO - Lottery Data Fetch Summary:
+XSMT: succeeded
