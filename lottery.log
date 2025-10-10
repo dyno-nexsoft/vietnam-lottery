@@ -1,17 +1,12 @@
-2025-10-09 18:49:32,009 - INFO - Date range: 2025-10-09 to 2025-10-09
-2025-10-09 18:49:32,091 - INFO - Fetching XSMB from 2025-10-09 to 2025-10-09
-2025-10-09 18:49:32,109 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-08
-2025-10-09 18:49:32,109 - INFO - Successfully loaded existing data from data/xsmb.json
-2025-10-09 18:49:32,109 - INFO - Fetching XSMB: 2025-10-09
-2025-10-09 18:49:32,109 - INFO - Fetching URL: https://xoso.com.vn/xsmb-09-10-2025.html
-2025-10-09 18:49:33,213 - INFO - Response status: 200
-2025-10-09 18:49:33,236 - INFO - Successfully fetched data for 2025-10-09
-2025-10-09 18:49:33,251 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-09
-2025-10-09 18:49:33,253 - INFO - Saved 63 results to data/xsmb.json
-2025-10-09 18:49:33,282 - INFO - Saved 63 records to data/xsmb.csv and data/xsmb.parquet
-2025-10-09 18:49:33,286 - INFO - Saved 63 records to data/xsmb-2-digits.csv and data/xsmb-2-digits.parquet
-2025-10-09 18:49:33,295 - INFO - Saved 63 records to data/xsmb-sparse.csv and data/xsmb-sparse.parquet
-2025-10-09 18:49:33,302 - INFO - Successfully saved sparse data to data/xsmb-sparse.json
-2025-10-09 18:49:33,302 - INFO - Successfully fetched 1/1 days of XSMB data
-2025-10-09 18:49:33,302 - INFO - Lottery Data Fetch Summary:
-XSMB: succeeded
+2025-10-10 16:53:40,869 - INFO - Date range: 2025-10-10 to 2025-10-10
+2025-10-10 16:53:40,948 - INFO - Fetching XSMN from 2025-10-10 to 2025-10-10
+2025-10-10 16:53:40,972 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-09
+2025-10-10 16:53:40,972 - INFO - Successfully loaded existing data from data/xsmn.json
+2025-10-10 16:53:40,972 - INFO - Fetching XSMN: 2025-10-10
+2025-10-10 16:53:40,972 - INFO - Fetching URL: https://xoso.com.vn/xsmn-10-10-2025.html
+2025-10-10 16:53:41,555 - INFO - Response status: 408
+2025-10-10 16:53:41,555 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmn-10-10-2025.html, status code: 408
+2025-10-10 16:53:41,555 - WARNING - No data or invalid data for XSMN on 2025-10-10
+2025-10-10 16:53:41,555 - ERROR - No valid XSMN data fetched
+2025-10-10 16:53:41,555 - INFO - Lottery Data Fetch Summary:
+XSMN: failed
