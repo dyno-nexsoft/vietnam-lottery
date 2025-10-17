@@ -1,20 +1,17 @@
-2025-10-17 17:50:35,275 - INFO - Date range: 2025-10-17 to 2025-10-17
-2025-10-17 17:50:35,351 - INFO - Fetching XSMT from 2025-10-17 to 2025-10-17
-2025-10-17 17:50:35,379 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-16
-2025-10-17 17:50:35,380 - INFO - Successfully loaded existing data from data/xsmt.json
-2025-10-17 17:50:35,380 - INFO - Fetching XSMT: 2025-10-17
-2025-10-17 17:50:35,380 - INFO - Fetching URL: https://xoso.com.vn/xsmt-17-10-2025.html
-2025-10-17 17:50:36,857 - INFO - Response status: 200
-2025-10-17 17:50:36,880 - INFO - Found provinces: Gia Lai, Ninh Thuận
-2025-10-17 17:50:36,881 - INFO - Successfully processed data for Gia Lai on 2025-10-17
-2025-10-17 17:50:36,881 - INFO - Successfully processed data for Ninh Thuận on 2025-10-17
-2025-10-17 17:50:36,881 - INFO - Successfully fetched 2 results for date 2025-10-17
-2025-10-17 17:50:36,901 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-17
-2025-10-17 17:50:36,905 - INFO - Saved 172 results to data/xsmt.json
-2025-10-17 17:50:36,987 - INFO - Saved 172 records to data/xsmt.csv and data/xsmt.parquet
-2025-10-17 17:50:36,991 - INFO - Saved 172 records to data/xsmt-2-digits.csv and data/xsmt-2-digits.parquet
-2025-10-17 17:50:37,002 - INFO - Saved 172 records to data/xsmt-sparse.csv and data/xsmt-sparse.parquet
-2025-10-17 17:50:37,010 - INFO - Successfully saved sparse data to data/xsmt-sparse.json
-2025-10-17 17:50:37,010 - INFO - Successfully fetched 1/1 days of XSMT data
-2025-10-17 17:50:37,010 - INFO - Lottery Data Fetch Summary:
-XSMT: succeeded
+2025-10-17 18:49:38,586 - INFO - Date range: 2025-10-17 to 2025-10-17
+2025-10-17 18:49:38,663 - INFO - Fetching XSMB from 2025-10-17 to 2025-10-17
+2025-10-17 18:49:38,680 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-16
+2025-10-17 18:49:38,680 - INFO - Successfully loaded existing data from data/xsmb.json
+2025-10-17 18:49:38,680 - INFO - Fetching XSMB: 2025-10-17
+2025-10-17 18:49:38,680 - INFO - Fetching URL: https://xoso.com.vn/xsmb-17-10-2025.html
+2025-10-17 18:49:39,957 - INFO - Response status: 200
+2025-10-17 18:49:39,979 - INFO - Successfully fetched data for 2025-10-17
+2025-10-17 18:49:39,995 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-17
+2025-10-17 18:49:39,998 - INFO - Saved 71 results to data/xsmb.json
+2025-10-17 18:49:40,138 - INFO - Saved 71 records to data/xsmb.csv and data/xsmb.parquet
+2025-10-17 18:49:40,142 - INFO - Saved 71 records to data/xsmb-2-digits.csv and data/xsmb-2-digits.parquet
+2025-10-17 18:49:40,152 - INFO - Saved 71 records to data/xsmb-sparse.csv and data/xsmb-sparse.parquet
+2025-10-17 18:49:40,159 - INFO - Successfully saved sparse data to data/xsmb-sparse.json
+2025-10-17 18:49:40,159 - INFO - Successfully fetched 1/1 days of XSMB data
+2025-10-17 18:49:40,159 - INFO - Lottery Data Fetch Summary:
+XSMB: succeeded
