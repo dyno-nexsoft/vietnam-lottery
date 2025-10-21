@@ -1,29 +1,12 @@
-2025-10-21 16:53:22,033 - INFO - Date range: 2025-10-20 to 2025-10-21
-2025-10-21 16:53:22,115 - INFO - Fetching XSMN from 2025-10-20 to 2025-10-21
-2025-10-21 16:53:22,143 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-19
-2025-10-21 16:53:22,143 - INFO - Successfully loaded existing data from data/xsmn.json
-2025-10-21 16:53:22,143 - INFO - Fetching XSMN: 2025-10-20
-2025-10-21 16:53:22,144 - INFO - Fetching URL: https://xoso.com.vn/xsmn-20-10-2025.html
-2025-10-21 16:53:22,921 - INFO - Response status: 200
-2025-10-21 16:53:22,945 - INFO - Found provinces: TPHCM, Đồng Tháp, Cà Mau
-2025-10-21 16:53:22,946 - INFO - Successfully processed data for TPHCM on 2025-10-20
-2025-10-21 16:53:22,946 - INFO - Successfully processed data for Đồng Tháp on 2025-10-20
-2025-10-21 16:53:22,946 - INFO - Successfully processed data for Cà Mau on 2025-10-20
-2025-10-21 16:53:22,946 - INFO - Successfully fetched 3 results for date 2025-10-20
-2025-10-21 16:53:22,946 - INFO - Fetching XSMN: 2025-10-21
-2025-10-21 16:53:22,946 - INFO - Fetching URL: https://xoso.com.vn/xsmn-21-10-2025.html
-2025-10-21 16:53:23,184 - INFO - Response status: 200
-2025-10-21 16:53:23,206 - INFO - Found provinces: Bến Tre, Vũng Tàu, Bạc Liêu
-2025-10-21 16:53:23,207 - INFO - Successfully processed data for Bến Tre on 2025-10-21
-2025-10-21 16:53:23,207 - INFO - Successfully processed data for Vũng Tàu on 2025-10-21
-2025-10-21 16:53:23,207 - INFO - Successfully processed data for Bạc Liêu on 2025-10-21
-2025-10-21 16:53:23,207 - INFO - Successfully fetched 3 results for date 2025-10-21
-2025-10-21 16:53:23,231 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-21
-2025-10-21 16:53:23,236 - INFO - Saved 236 results to data/xsmn.json
-2025-10-21 16:53:23,301 - INFO - Saved 236 records to data/xsmn.csv and data/xsmn.parquet
-2025-10-21 16:53:23,305 - INFO - Saved 236 records to data/xsmn-2-digits.csv and data/xsmn-2-digits.parquet
-2025-10-21 16:53:23,318 - INFO - Saved 236 records to data/xsmn-sparse.csv and data/xsmn-sparse.parquet
-2025-10-21 16:53:23,327 - INFO - Successfully saved sparse data to data/xsmn-sparse.json
-2025-10-21 16:53:23,328 - INFO - Successfully fetched 2/2 days of XSMN data
-2025-10-21 16:53:23,328 - INFO - Lottery Data Fetch Summary:
-XSMN: succeeded
+2025-10-21 17:52:07,990 - INFO - Date range: 2025-10-21 to 2025-10-21
+2025-10-21 17:52:08,067 - INFO - Fetching XSMT from 2025-10-21 to 2025-10-21
+2025-10-21 17:52:08,088 - INFO - Generated dataframes with data from 2025-08-08 to 2025-10-20
+2025-10-21 17:52:08,088 - INFO - Successfully loaded existing data from data/xsmt.json
+2025-10-21 17:52:08,088 - INFO - Fetching XSMT: 2025-10-21
+2025-10-21 17:52:08,088 - INFO - Fetching URL: https://xoso.com.vn/xsmt-21-10-2025.html
+2025-10-21 17:52:08,484 - INFO - Response status: 408
+2025-10-21 17:52:08,484 - ERROR - Failed to fetch URL https://xoso.com.vn/xsmt-21-10-2025.html, status code: 408
+2025-10-21 17:52:08,484 - WARNING - No data or invalid data for XSMT on 2025-10-21
+2025-10-21 17:52:08,484 - ERROR - No valid XSMT data fetched
+2025-10-21 17:52:08,485 - INFO - Lottery Data Fetch Summary:
+XSMT: failed
